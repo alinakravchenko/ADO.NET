@@ -9,6 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+//CREATE TABLE[dbo].[Vegetables_fruts] (
+//    [Id]           INT NOT NULL,
+//    [name]         VARCHAR (100) NOT NULL,
+//    [type]         VARCHAR (100) NOT NULL,
+//    [color]        VARCHAR (100) NOT NULL,
+//    [max(Calorie)] VARCHAR (100) NOT NULL,
+//    [min(Calorie)] VARCHAR (100) NOT NULL,
+//    [avg(Calorie)] VARCHAR (100) NOT NULL,
+//    PRIMARY KEY CLUSTERED ([Id] ASC)
+//);
+
 namespace ADO_HM1
 {
     public partial class Form1 : Form
@@ -96,48 +108,60 @@ namespace ADO_HM1
             dr.Close();
         }
 
+
+        //ЧЕРНОВИК ЗАДАНИЙ 
+
+
+
+        //Показать максимальную калорийность 
+        //Показать минимальную калорийность 
+        //Показать среднюю калорийность
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            cmd = new SqlCommand();
-            cmd.CommandText = "select max(Calorie) from Vegetables_fruts";
-            cmd.Connection = conn;
-            dr = cmd.ExecuteReader(); //выдает тут ошибку
-            while (dr.Read())
-            {
-                textBox1.Text += dr.GetInt32(0) + "\r\n";
+            //cmd.CommandText = "select max(Calorie) from Vegetables_fruts";
+            //cmd.Connection = conn;
+            //dr = cmd.ExecuteReader(); 
+            //cmd = new SqlCommand();
+            //int value = 0;
+            //while (result.Read())
+            //{
+            //    value = result.GetInt32("max");
+            //textBox1.Text += dr.GetInt32(0)
+            //}
+            //return value;
 
 
-            }
-            dr.Close();
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            cmd = new SqlCommand();
-            cmd.CommandText = "select min(Calorie) from Vegetables_fruts";
-            cmd.Connection = conn;
-            dr = cmd.ExecuteReader(); //выдает тут ошибку
-            while (dr.Read())
-            {
-                textBox1.Text += dr.GetInt32(0) + "\r\n";
-            }
-            dr.Close();
+            //cmd.CommandText = "select min(Calorie) from Vegetables_fruts";
+            //cmd.Connection = conn;
+            //dr = cmd.ExecuteReader(); 
+            //cmd = new SqlCommand();
+            //int value = 0;
+            //while (result.Read())
+            //{
+            //    value = result.GetInt32("min");
+            //textBox1.Text += dr.GetInt32(0)
+            //}
+            //return value;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            cmd = new SqlCommand();
-            cmd.CommandText = "select avg(Calorie) from Vegetables_fruts";
-            cmd.Connection = conn;
-            dr = cmd.ExecuteReader(); //выдает тут ошибку, возможно ошибка в самих таблицах
-            while (dr.Read())
-            {
-                textBox1.Text += dr.GetInt32(0) + "\r\n";
-            }
-            dr.Close();
+            //cmd.CommandText = "select avg(Calorie) from Vegetables_fruts";
+            //cmd.Connection = conn;
+            //dr = cmd.ExecuteReader(); 
+            //cmd = new SqlCommand();
+            //int value = 0;
+            //while (result.Read())
+            //{
+            //    value = result.GetInt32("avg");
+            //textBox1.Text += dr.GetInt32(0)
+            //}
+            //return value;
         }
         int countv = 0;
         int countf = 0;
@@ -240,23 +264,23 @@ namespace ADO_HM1
 
 
         //ЗАДАНИЕ 4     Показать овощи и фрукты с калорийностью в указанном диапазоне
-        // НЕ РАБОТАЕТ, ВЫДАЕТ ОШИБКУ 
+        
         private void button12_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            cmd = new SqlCommand();
-            cmd.CommandText = "select * from Vegetables_fruts";
-            cmd.Connection = conn;
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                if (dr.GetInt32(3) > int.Parse(textBox3.Text) && dr.GetInt32(3) < int.Parse(textBox4.Text))
-                {
-                    textBox1.Text += dr.GetString(0) + "\t" + dr.GetString(1) + "\t" + dr.GetString(2) + "\t" + dr.GetInt32(3) + "\r\n";
-                }
+            //textBox1.Clear();
+            //cmd = new SqlCommand();
+            //cmd.CommandText = "select * from Vegetables_fruts";
+            //cmd.Connection = conn;
+            //dr = cmd.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    if (dr.GetInt32(3) > int.Parse(textBox3.Text) && dr.GetInt32(3) < int.Parse(textBox4.Text))
+            //    {
+            //        textBox1.Text += dr.GetString(0) + "\t" + dr.GetString(1) + "\t" + dr.GetString(2) + "\t" + dr.GetInt32(3) + "\r\n";
+            //    }
 
-            }
-            dr.Close();
+            //}
+            //dr.Close();
         }
 
         private void button13_Click(object sender, EventArgs e)
